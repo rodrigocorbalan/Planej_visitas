@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7620010edf94e65f25186b929adea45f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7620010edf94e65f25186b929adea45f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7620010edf94e65f25186b929adea45f = L.map(
+                "map_7620010edf94e65f25186b929adea45f",
+                {
+                    center: [-23.5982995, -46.4817046],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4334a16d9447f0b931ec5f4b7a2f70db = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4334a16d9447f0b931ec5f4b7a2f70db.addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+            var marker_8410abf0f37b24cc97a54065e5d79cc5 = L.marker(
+                [-23.5982995, -46.4817046],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_b4968688adc5ae3b00aa1d8e1c7fe70e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b01429e9bedca08eead56454692e124e = $(`<div id="html_b01429e9bedca08eead56454692e124e" style="width: 100.0%; height: 100.0%;"><b>SAO_MATEUS</b><br><a href="https://waze.com/ul?ll=-23.5982995,-46.4817046&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_b4968688adc5ae3b00aa1d8e1c7fe70e.setContent(html_b01429e9bedca08eead56454692e124e);
+            
+        
+
+        marker_8410abf0f37b24cc97a54065e5d79cc5.bindPopup(popup_b4968688adc5ae3b00aa1d8e1c7fe70e)
+        ;
+
+        
+    
+    
+            var marker_6da7f06bde1bb5ed5c6a856b24237411 = L.marker(
+                [-23.581806, -46.531028],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_08d3637aa7bbc95a9b48855097e7c7bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39b51a73bc0ec9f8ace47ae0435f1551 = $(`<div id="html_39b51a73bc0ec9f8ace47ae0435f1551" style="width: 100.0%; height: 100.0%;"><b>SPSPO_0463</b><br><a href="https://waze.com/ul?ll=-23.581806,-46.531028&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_08d3637aa7bbc95a9b48855097e7c7bd.setContent(html_39b51a73bc0ec9f8ace47ae0435f1551);
+            
+        
+
+        marker_6da7f06bde1bb5ed5c6a856b24237411.bindPopup(popup_08d3637aa7bbc95a9b48855097e7c7bd)
+        ;
+
+        
+    
+    
+            var marker_b3cdad0576ebd9ceb7b5d73df1b473d2 = L.marker(
+                [-23.533917, -46.540444],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_6645b977e4ef8c15ba0ba64c4087f0b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3890b73fa238d6db70a4552be77629ce = $(`<div id="html_3890b73fa238d6db70a4552be77629ce" style="width: 100.0%; height: 100.0%;"><b>SPSPO_0504</b><br><a href="https://waze.com/ul?ll=-23.533917,-46.540444&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_6645b977e4ef8c15ba0ba64c4087f0b0.setContent(html_3890b73fa238d6db70a4552be77629ce);
+            
+        
+
+        marker_b3cdad0576ebd9ceb7b5d73df1b473d2.bindPopup(popup_6645b977e4ef8c15ba0ba64c4087f0b0)
+        ;
+
+        
+    
+    
+            var marker_813b3a3553a30818b825cffebe8c5c21 = L.marker(
+                [-23.525272, -46.615911],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_2390cad0ed6298feb0b3fe13a6f6bcf6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11d874c26e962290e8fed83385a245a2 = $(`<div id="html_11d874c26e962290e8fed83385a245a2" style="width: 100.0%; height: 100.0%;"><b>SPSPO_0756</b><br><a href="https://waze.com/ul?ll=-23.525272,-46.615911&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_2390cad0ed6298feb0b3fe13a6f6bcf6.setContent(html_11d874c26e962290e8fed83385a245a2);
+            
+        
+
+        marker_813b3a3553a30818b825cffebe8c5c21.bindPopup(popup_2390cad0ed6298feb0b3fe13a6f6bcf6)
+        ;
+
+        
+    
+    
+            var marker_172fedf6443757529b69832b8397720e = L.marker(
+                [-23.506361, -46.7115],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_1676c110b698d565f4b1b275be4e0124 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6ca66ea09bbddc00f9a59cb04475d82 = $(`<div id="html_d6ca66ea09bbddc00f9a59cb04475d82" style="width: 100.0%; height: 100.0%;"><b>SPSPO_0345</b><br><a href="https://waze.com/ul?ll=-23.506361,-46.7115&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_1676c110b698d565f4b1b275be4e0124.setContent(html_d6ca66ea09bbddc00f9a59cb04475d82);
+            
+        
+
+        marker_172fedf6443757529b69832b8397720e.bindPopup(popup_1676c110b698d565f4b1b275be4e0124)
+        ;
+
+        
+    
+    
+            var marker_9e7e304e2155939005eca6a72a617d7b = L.marker(
+                [-23.511111, -46.75575],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_7a5922c5dddf8c0959e44752a7606b6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5901c2f4612aef682ddb37fe2adc257 = $(`<div id="html_f5901c2f4612aef682ddb37fe2adc257" style="width: 100.0%; height: 100.0%;"><b>SPSPO_0210</b><br><a href="https://waze.com/ul?ll=-23.511111,-46.75575&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_7a5922c5dddf8c0959e44752a7606b6b.setContent(html_f5901c2f4612aef682ddb37fe2adc257);
+            
+        
+
+        marker_9e7e304e2155939005eca6a72a617d7b.bindPopup(popup_7a5922c5dddf8c0959e44752a7606b6b)
+        ;
+
+        
+    
+    
+            var marker_e158738e7a850a600d4de841c33486fb = L.marker(
+                [-23.481056, -46.766389],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_00261042409a64fe45b13cdc4bb2e8ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83f5d73d33b206c542f92ae184eea06f = $(`<div id="html_83f5d73d33b206c542f92ae184eea06f" style="width: 100.0%; height: 100.0%;"><b>SPSPO12362</b><br><a href="https://waze.com/ul?ll=-23.481056,-46.766389&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_00261042409a64fe45b13cdc4bb2e8ac.setContent(html_83f5d73d33b206c542f92ae184eea06f);
+            
+        
+
+        marker_e158738e7a850a600d4de841c33486fb.bindPopup(popup_00261042409a64fe45b13cdc4bb2e8ac)
+        ;
+
+        
+    
+    
+            var marker_7835944497ff5dab691256c50243f6f5 = L.marker(
+                [-23.556, -46.801333],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_b46f9f6f3485c609de5a546ffb804055 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1588c9664db89aa9309c968456d726ea = $(`<div id="html_1588c9664db89aa9309c968456d726ea" style="width: 100.0%; height: 100.0%;"><b>SPOCO_0003</b><br><a href="https://waze.com/ul?ll=-23.556,-46.801333&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_b46f9f6f3485c609de5a546ffb804055.setContent(html_1588c9664db89aa9309c968456d726ea);
+            
+        
+
+        marker_7835944497ff5dab691256c50243f6f5.bindPopup(popup_b46f9f6f3485c609de5a546ffb804055)
+        ;
+
+        
+    
+    
+            var marker_22b575b7e9c4a5470cfb46c92a5ed578 = L.marker(
+                [-23.5982995, -46.4817046],
+                {
+}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+    
+        var popup_59c3a8a3ce41afef2128a78d1025a4c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef6ea10b201f815b23d79179b92b7054 = $(`<div id="html_ef6ea10b201f815b23d79179b92b7054" style="width: 100.0%; height: 100.0%;"><b>SAO_MATEUS</b><br><a href="https://waze.com/ul?ll=-23.5982995,-46.4817046&navigate=yes" target="_blank">Navegar com Waze</a></div>`)[0];
+                popup_59c3a8a3ce41afef2128a78d1025a4c5.setContent(html_ef6ea10b201f815b23d79179b92b7054);
+            
+        
+
+        marker_22b575b7e9c4a5470cfb46c92a5ed578.bindPopup(popup_59c3a8a3ce41afef2128a78d1025a4c5)
+        ;
+
+        
+    
+    
+            var poly_line_ed211fd25fd404b4dde3b3250a8347d0 = L.polyline(
+                [[-23.5982995, -46.4817046], [-23.581806, -46.531028], [-23.533917, -46.540444], [-23.525272, -46.615911], [-23.506361, -46.7115], [-23.511111, -46.75575], [-23.481056, -46.766389], [-23.556, -46.801333], [-23.5982995, -46.4817046]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_7620010edf94e65f25186b929adea45f);
+        
+</script>
+</html>
