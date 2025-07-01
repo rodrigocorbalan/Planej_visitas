@@ -1,14 +1,134 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planejamento de Visitas - Antenas TIM</title>
-    <script type="module" crossorigin src="/assets/index-B_FIPhtl.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BGKlqfZ3.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otimizador de Rotas TIM</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Otimizador de Rotas</h1>
+        <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <div class="container">
+        <!-- Seção de Parâmetros no Topo -->
+        <section class="parameters-section card">
+            <h2>1. Parâmetros da Rota</h2>
+            <div class="parameters-grid">
+                <div class="param-group start-point">
+                    <label for="start">Local de Partida</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="start" value="Av. Alexandre de Gusmão, 29, Santo André, SP">
+                    </div>
+                    <p id="start-feedback" class="feedback-text"></p>
+                </div>
+                <div class="param-group">
+                    <label for="start-date">Data de Início</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="start-date">
+                    </div>
+                </div>
+                <div class="param-group">
+                    <label for="service-time">Tempo por Visita (h)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-clock"></i>
+                        <input type="number" id="service-time" value="0.5" min="0" step="0.25">
+                    </div>
+                </div>
+                <div class="param-group">
+                    <label for="work-hours">Jornada Diária (h)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-sun"></i>
+                        <input type="number" id="work-hours" value="8" min="1" step="0.5">
+                    </div>
+                </div>
+                <div class="param-group">
+                    <label for="lunch-hours">Almoço (h)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-utensils"></i>
+                        <input type="number" id="lunch-hours" value="1" min="0" step="0.25">
+                    </div>
+                </div>
+                <div class="param-group">
+                    <label for="fuel-consumption">Consumo (km/l)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-gas-pump"></i>
+                        <input type="number" id="fuel-consumption" value="13.5" min="1" step="0.1">
+                    </div>
+                </div>
+                <div class="param-group algorithm">
+                    <label for="routing-algorithm">Algoritmo de Roteirização</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-cogs"></i>
+                        <select id="routing-algorithm">
+                            <option value="optimized" selected title="Otimiza a rota para encontrar o menor tempo ou distância total, ideal para eficiência.">Rota Otimizada (Padrão)</option>
+                            <option value="nearest_neighbor" title="Prioriza a próxima parada mais próxima, útil para rotas rápidas mas não necessariamente a mais eficiente globalmente.">Local Mais Próximo</option>
+                            <option value="in_order" title="Segue a ordem exata em que você adicionou os endereços, sem otimização.">Ordem Fornecida</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conteúdo Principal Dividido (Endereços e Mapa) -->
+        <main class="main-content">
+            <div class="left-column">
+                <section class="waypoints-section card">
+                    <div class="waypoints-header">
+                        <h2>2. Endereços para Visitar</h2>
+                        <div class="header-buttons">
+                            <button id="save-route-btn" class="test-btn"><i class="fas fa-save"></i> Guardar</button>
+                            <button id="load-route-btn" class="test-btn" disabled><i class="fas fa-folder-open"></i> Carregar</button>
+                            <button id="load-test-btn" class="test-btn">Teste</button>
+                        </div>
+                    </div>
+                    <div class="add-waypoint-container">
+                        <input type="text" id="new-waypoint-input" placeholder="Digite um endereço e clique em Adicionar">
+                        <button id="add-waypoint-btn" class="secondary-btn">Adicionar</button>
+                    </div>
+                    <ol id="waypoints-list"></ol>
+                    <div class="waypoints-actions">
+                        <button id="calculate-btn">Otimizar Rota</button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section id="map-section" class="card">
+                    <button id="fullscreen-btn" class="fullscreen-btn"><i class="fas fa-expand"></i></button>
+                    <div id="map"></div>
+                    <!-- Contêiner para a legenda do mapa -->
+                    <div id="map-legend" class="map-legend"></div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Seção de Resultados Abaixo -->
+        <section id="results-section" class="card">
+            <div class="results-header">
+                <h2>3. Planeamento Diário</h2>
+                <button id="export-pdf-btn" class="test-btn" style="display: none;"><i class="fas fa-file-pdf"></i> Exportar PDF</button>
+            </div>
+            <div id="progress-feedback" class="progress-container"></div>
+            <div id="results"><p>O seu planeamento otimizado aparecerá aqui.</p></div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
